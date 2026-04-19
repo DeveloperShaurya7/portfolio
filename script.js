@@ -1,6 +1,5 @@
 const root = document.documentElement;
 const body = document.body;
-const pageOverlay = document.getElementById('pageOverlay');
 const scrollProgress = document.getElementById('scrollProgress');
 const typewriterText = document.getElementById('typewriter');
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -469,10 +468,6 @@ const init = () => {
   initContactForm();
   updateScrollProgress();
   window.addEventListener('scroll', updateScrollProgress);
-  window.addEventListener('load', () => {
-    pageOverlay.classList.add('hidden');
-    setTimeout(() => pageOverlay.remove(), 600);
-  });
 };
 
 init();
