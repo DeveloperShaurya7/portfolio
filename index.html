@@ -1,332 +1,422 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#08101F" />
-    <meta name="description" content="Raviranjan Kumar portfolio with modern UI, project showcase, certifications, and dark professional styling." />
-    <meta property="og:title" content="Raviranjan Kumar | Software Developer" />
-    <meta property="og:description" content="A professional developer portfolio featuring work highlights, certifications, experience timeline, and an interactive contact experience." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="favicon.svg" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="manifest" href="manifest.webmanifest" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              primary: '#38bdf8',
-              accent: '#fb7185',
-              surface: '#020617',
-            },
-            boxShadow: {
-              glow: '0 24px 80px rgba(8, 16, 31, 0.34)',
-            },
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#08101F" />
+  <meta name="description"
+    content="Raviranjan Kumar portfolio with modern UI, project showcase, certifications, and dark professional styling." />
+  <meta property="og:title" content="Raviranjan Kumar | Software Developer" />
+  <meta property="og:description"
+    content="A professional developer portfolio featuring work highlights, certifications, experience timeline, and an interactive contact experience." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="favicon.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#38bdf8',
+            accent: '#fb7185',
+            surface: '#020617',
+          },
+          boxShadow: {
+            glow: '0 24px 80px rgba(8, 16, 31, 0.34)',
           },
         },
-      };
-    </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pVnN6VzJd0+Z60S6KqK0bI+6LQiQpeE+tsOwMspB2SxqrSRwIZxHZ8pz/56pS6GKoAMh9salhQm3qr6k7X0zNw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Raviranjan Kumar | Software Developer</title>
-  </head>
-  <body class="bg-slate-950 text-slate-100 antialiased selection:bg-primary/40 selection:text-white">
-    <div class="page-overlay" id="pageOverlay" aria-hidden="true">
-      <div class="loader">
-        <span></span>
-        <span></span>
-        <span></span>
+      },
+    };
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-pVnN6VzJd0+Z60S6KqK0bI+6LQiQpeE+tsOwMspB2SxqrSRwIZxHZ8pz/56pS6GKoAMh9salhQm3qr6k7X0zNw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Raviranjan Kumar | Software Developer</title>
+</head>
+
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-primary/40 selection:text-white">
+  <div class="page-overlay" id="pageOverlay" aria-hidden="true">
+    <div class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <header class="sticky top-0 z-50 border-b border-slate-800/70 bg-slate-950/80 backdrop-blur-xl backdrop-saturate-150">
+    <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4">
+      <a href="#home" class="font-semibold tracking-[0.24em] text-slate-100">Ravi.</a>
+      <nav class="hidden items-center gap-6 text-sm text-slate-400 md:flex">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#certifications" class="nav-link">Certifications</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button id="mobileMenuBtn"
+          class="flex h-11 w-11 flex-col items-center justify-center gap-1 rounded-2xl border border-slate-700 bg-slate-900/80 text-slate-100 md:hidden"
+          aria-label="Open mobile menu">
+          <span class="block h-0.5 w-5 rounded-full bg-current"></span>
+          <span class="block h-0.5 w-5 rounded-full bg-current"></span>
+          <span class="block h-0.5 w-5 rounded-full bg-current"></span>
+        </button>
       </div>
     </div>
+    <div id="mobileNav"
+      class="mobile-nav hidden flex-col border-t border-slate-800/70 bg-slate-950/95 px-6 py-4 md:hidden">
+      <a href="#home" class="nav-link block py-2">Home</a>
+      <a href="#about" class="nav-link block py-2">About</a>
+      <a href="#skills" class="nav-link block py-2">Skills</a>
+      <a href="#projects" class="nav-link block py-2">Projects</a>
+      <a href="#experience" class="nav-link block py-2">Experience</a>
+      <a href="#certifications" class="nav-link block py-2">Certifications</a>
+      <a href="#contact" class="nav-link block py-2">Contact</a>
+    </div>
+  </header>
 
-    <div class="cursor" id="cursor"></div>
-    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <main class="mx-auto max-w-7xl px-6 py-10 sm:py-14">
+    <section id="home"
+      class="section relative overflow-hidden rounded-[2.25rem] bg-slate-950/70 px-6 pt-20 pb-14 sm:px-10 sm:pt-24 sm:pb-20 shadow-glow">
+      <div class="absolute -left-16 top-10 h-72 w-72 rounded-full bg-primary/20 blur-3xl"></div>
+      <div class="absolute -right-16 bottom-8 h-72 w-72 rounded-full bg-accent/20 blur-3xl"></div>
+      <div class="relative grid gap-12 lg:grid-cols-[1.3fr_0.9fr] lg:items-center">
+        <div class="order-2 space-y-6 lg:order-1">
+          <p class="text-sm uppercase tracking-[0.28em] text-primary">Hello, I'm</p>
+          <h1 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl">
+            <span id="typewriter"></span><span class="typewriter-cursor">|</span>
+          </h1>
+          <p class="max-w-2xl text-slate-300 sm:text-lg">Building secure, scalable digital products with clean
+            architecture and modern frontend experiences.</p>
+          <div class="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+            <a href="#projects"
+              class="inline-flex items-center justify-center rounded-[16px] bg-gradient-to-r from-primary to-accent px-5 py-3 text-sm font-semibold text-white shadow-[0_20px_40px_rgba(56,189,248,0.28)] transition-transform duration-200 hover:-translate-y-0.5">
+              <i class="fa-solid fa-arrow-right mr-2 text-base"></i>
+              View Projects
+            </a>
+            <a href="#contact"
+              class="inline-flex items-center justify-center rounded-[16px] border border-slate-700 bg-slate-900/70 px-5 py-3 text-sm font-semibold text-slate-100 transition hover:bg-slate-900">
+              <i class="fa-solid fa-envelope mr-2 text-base"></i>
+              Contact Me
+            </a>
+            <a href="Raviranjan kumar_resume.pdf" download
+              class="inline-flex items-center justify-center rounded-[16px] border border-slate-700 bg-transparent px-5 py-3 text-sm font-semibold text-slate-100 transition hover:bg-slate-900">
+              <i class="fa-solid fa-file-arrow-down mr-2 text-base"></i>
+              Download Resume
+            </a>
+          </div>
+          <div class="flex flex-wrap gap-4 text-sm text-slate-400 mt-6">
+            <a href="https://github.com/DeveloperShaurya7"
+              class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/70 px-4 py-3 transition hover:bg-slate-800 hover:text-white"><i
+                class="fa-brands fa-github"></i>GitHub</a>
+            <a href="https://www.linkedin.com/in/ravi-ranjan-kumar-375329334/"
+              class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/70 px-4 py-3 transition hover:bg-slate-800 hover:text-white"><i
+                class="fa-brands fa-linkedin"></i>LinkedIn</a>
+            <a href="https://x.com/developrshaurya"
+              class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/70 px-4 py-3 transition hover:bg-slate-800 hover:text-white"><i
+                class="fa-brands fa-twitter"></i>Twitter</a>
+            <a href="https://www.instagram.com/developershaurya/"
+              class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/70 px-4 py-3 transition hover:bg-slate-800 hover:text-white"><i
+                class="fa-brands fa-instagram"></i>Instagram</a>
+          </div>
+        </div>
+        <div class="order-1 flex items-center justify-center lg:order-2">
+          <div
+            class="relative overflow-hidden rounded-[2.75rem] border border-slate-800/70 bg-slate-950/80 p-4 shadow-[0_40px_120px_rgba(8,16,31,0.35)]">
+            <div class="pointer-events-none absolute -left-12 top-12 h-40 w-40 rounded-full bg-primary/20 blur-3xl">
+            </div>
+            <div class="pointer-events-none absolute -right-14 bottom-12 h-32 w-32 rounded-full bg-accent/25 blur-3xl">
+            </div>
+            <img src="images/my profile.png" alt="Portrait of Raviranjan Kumar"
+              class="aspect-square w-full max-w-[400px] rounded-[2.5rem] bg-slate-950 object-contain" />
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <header class="sticky top-0 z-50 border-b border-slate-800/70 bg-slate-950/80 backdrop-blur-xl backdrop-saturate-150">
-      <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4">
-        <a href="#home" class="font-semibold tracking-[0.24em] text-slate-100">Ravi.</a>
-        <nav class="hidden items-center gap-6 text-sm text-slate-400 md:flex">
-          <a href="#home" class="nav-link">Home</a>
-          <a href="#about" class="nav-link">About</a>
-          <a href="#skills" class="nav-link">Skills</a>
-          <a href="#projects" class="nav-link">Projects</a>
-          <a href="#experience" class="nav-link">Experience</a>
-          <a href="#certifications" class="nav-link">Certifications</a>
-          <a href="#contact" class="nav-link">Contact</a>
-        </nav>
+    <section id="about" class="section mt-12 md:mt-16">
+      <div class="mb-10 space-y-3">
+        <p class="text-sm uppercase tracking-[0.28em] text-primary">About Me</p>
+        <h2 class="text-3xl font-semibold text-white sm:text-4xl">Professional profile + achievements</h2>
+      </div>
+      <div class="grid gap-6 lg:grid-cols-[1.4fr_0.8fr]">
+        <div class="rounded-[2rem] border border-slate-800/70 bg-slate-950/70 backdrop-blur-xl shadow-glow p-8">
+          <p class="text-slate-300">I'm a full-stack software engineer with a passion for solving complex problems,
+            building beautiful interfaces, and scaling products with modern architecture.</p>
+          <ul class="mt-8 grid gap-3 text-slate-200">
+            <li class="rounded-3xl border border-slate-800/80 bg-slate-950/80 px-5 py-4"> <strong class="text-white">5+
+                years</strong> building apps in startups and teams</li>
+            <li class="rounded-3xl border border-slate-800/80 bg-slate-950/80 px-5 py-4"> <strong
+                class="text-white">30+</strong> shipped features and product launches</li>
+            <li class="rounded-3xl border border-slate-800/80 bg-slate-950/80 px-5 py-4"> <strong
+                class="text-white">4.9/5</strong> client and peer satisfaction</li>
+          </ul>
+          <p class="mt-8 text-slate-300">Outside work, I experiment with generative design, hiking, and open-source
+            contributions.</p>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+          <div class="rounded-[2rem] border border-slate-800/70 bg-slate-950/70 backdrop-blur-xl shadow-glow p-8">
+            <span data-target="12" class="text-4xl font-semibold text-white">0</span>
+            <p class="text-slate-400">Projects shipped</p>
+          </div>
+          <div class="rounded-[2rem] border border-slate-800/70 bg-slate-950/70 backdrop-blur-xl shadow-glow p-8">
+            <span data-target="5" class="text-4xl font-semibold text-white">0</span>
+            <p class="text-slate-400">Years experience</p>
+          </div>
+          <div class="rounded-[2rem] border border-slate-800/70 bg-slate-950/70 backdrop-blur-xl shadow-glow p-8">
+            <span data-target="95" class="text-4xl font-semibold text-white">0</span>
+            <p class="text-slate-400">Performance score</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section mt-12 md:mt-16">
+      <div class="mb-10 space-y-3">
+        <p class="text-sm uppercase tracking-[0.28em] text-primary">Skills</p>
+        <h2 class="text-3xl font-semibold text-white sm:text-4xl">Tech stack and specialties</h2>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-[2rem] border border-slate-800/70 bg-slate-950/70 backdrop-blur-xl shadow-glow p-8">
+          <h3 class="text-xl font-semibold text-white">Frontend</h3>
+          <ul class="mt-6 space-y-3 text-slate-300">
+            <li class="flex items-center justify-between rounded-3xl bg-slate-950/80 px-4 py-3">React <span
+                class="rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">Expert</span></li>
+            <li class="flex items-center justify-between rounded-3xl bg-slate-950/80 px-4 py-3">Next.js <span
+                class="rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">Advanced</span></li>
+            <li class="flex items-center justify-between rounded-3xl bg-slate-950/80 px-4 py-3">TypeScript <span
+                class="rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">Advanced</span></li>
+            <li class="flex items-center justify-between rounded-3xl bg-slate-950/80 px-4 py-3">Tailwind CSS <span
+                class="rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">Advanced</span></li>
+          </ul>
+        </div>
+        <div class="rounded-[2rem] border border-slate-800/70 bg-slate-950/70 backdrop-blur-xl shadow-glow p-8">
+          <h3 class="text-xl font-semibold text-white">Backend</h3>
+          <ul class="mt-6 space-y-3 text-slate-300">
+            <li class="flex items-center justify-between rounded-3xl bg-slate-950/80 px-4 py-3">Node.js <span
+                class="rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">Expert</span></li>
+            <li class="flex items-center justify-between rounded-3xl bg-slate-950/80 px-4 py-3">Express <span
+                class="rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">Advanced</span></li>
+            <li class="flex items-center justify-between rounded-3xl bg-slate-950/80 px-4 py-3">Django <span
+                class="rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">Intermediate</span></li>
+            <li class="flex items-center justify-between rounded-3xl bg-slate-950/80 px-4 py-3">REST APIs <span
+                class="rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">Expert</span></li>
+          </ul>
+        </div>
+        <div class="rounded-[2rem] border border-slate-800/70 bg-slate-950/70 backdrop-blur-xl shadow-glow p-8">
+          <h3 class="text-xl font-semibold text-white">Tools</h3>
+          <ul class="mt-6 space-y-3 text-slate-300">
+            <li class="flex items-center justify-between rounded-3xl bg-slate-950/80 px-4 py-3">Git <span
+                class="rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">Expert</span></li>
+            <li class="flex items-center justify-between rounded-3xl bg-slate-950/80 px-4 py-3">Docker <span
+                class="rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">Advanced</span></li>
+            <li class="flex items-center justify-between rounded-3xl bg-slate-950/80 px-4 py-3">AWS <span
+                class="rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">Intermediate</span></li>
+            <li class="flex items-center justify-between rounded-3xl bg-slate-950/80 px-4 py-3">CI/CD <span
+                class="rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">Advanced</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section mt-12 md:mt-16">
+      <div class="mb-10 space-y-3">
+        <p class="text-sm uppercase tracking-[0.28em] text-primary">Featured Work</p>
+        <h2 class="text-3xl font-semibold text-white sm:text-4xl">Recent projects</h2>
+      </div>
+      <div class="rounded-[2rem] border border-slate-800/70 bg-slate-950/70 backdrop-blur-xl shadow-glow p-5 sm:p-6">
+        <div class="flex flex-wrap gap-3">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="web">Web</button>
+          <button class="filter-btn" data-filter="mobile">Mobile</button>
+          <button class="filter-btn" data-filter="api">API</button>
+        </div>
+      </div>
+      <div id="projectsGrid" class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-2"></div>
+    </section>
+
+    <section id="experience" class="section mt-12 md:mt-16">
+      <div class="mb-10 space-y-3">
+        <p class="text-sm uppercase tracking-[0.28em] text-primary">Experience</p>
+        <h2 class="text-3xl font-semibold text-white sm:text-4xl">Career timeline</h2>
+      </div>
+      <div id="timeline" class="flex flex-col"></div>
+    </section>
+
+    <section id="certifications" class="section mt-12 md:mt-16">
+      <div class="mb-10 space-y-3">
+        <p class="text-sm uppercase tracking-[0.28em] text-primary">Certifications</p>
+        <h2 class="text-3xl font-semibold text-white sm:text-4xl">Verified visual credentials</h2>
+      </div>
+      <div id="certificationsGrid" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3"></div>
+    </section>
+
+    <section id="contact" class="section mt-12 md:mt-16">
+      <div class="mb-10 space-y-3">
+        <p class="text-sm uppercase tracking-[0.28em] text-primary">Contact</p>
+        <h2 class="text-3xl font-semibold text-white sm:text-4xl">Let's build something together</h2>
+      </div>
+      <div class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+        <div class="rounded-[2rem] border border-slate-800/70 bg-slate-950/70 backdrop-blur-xl shadow-glow p-8">
+          <h3 class="text-2xl font-semibold text-white">Get in touch</h3>
+          <p class="mt-4 text-slate-300">I'm available for freelance work and full-time roles.
+          </p>
+          <ul class="mt-8 space-y-3 text-slate-300">
+            <li><span class="font-semibold text-white"><a
+                  href="mailto: webwithshaurya@gmail.com"></a>Email:</span>webwithshaurya</li>
+            <li><span class="font-semibold text-white">Location:</span> Delhi , India</li>
+            <li><span class="font-semibold text-white">Availability:</span> Open for new opportunities</li>
+          </ul>
+          <div class="mt-8 flex flex-wrap gap-4 text-sm text-slate-400">
+            <a href="https://github.com/DeveloperShaurya7"
+              class="inline-flex items-center gap-2 transition hover:text-white"><i
+                class="fa-brands fa-github"></i>GitHub</a>
+            <a href="https://www.linkedin.com/in/ravi-ranjan-kumar-375329334/"
+              class="inline-flex items-center gap-2 transition hover:text-white"><i
+                class="fa-brands fa-linkedin"></i>LinkedIn</a>
+            <a href="https://x.com/developrshaurya"
+              class="inline-flex items-center gap-2 transition hover:text-white"><i
+                class="fa-brands fa-twitter"></i>Twitter</a>
+          </div>
+        </div>
+        <form id="contactForm"
+          class="rounded-[2rem] border border-slate-800/70 bg-slate-950/70 backdrop-blur-xl shadow-glow p-8" novalidate>
+          <label for="name" class="text-sm font-medium text-slate-100">Name</label>
+          <input id="name" name="name" type="text" required placeholder="Your name"
+            class="mt-2 w-full rounded-3xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-slate-100 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20" />
+          <label for="email" class="mt-5 block text-sm font-medium text-slate-100">Email</label>
+          <input id="email" name="email" type="email" required placeholder="you@example.com"
+            class="mt-2 w-full rounded-3xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-slate-100 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20" />
+          <label for="message" class="mt-5 block text-sm font-medium text-slate-100">Message</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project"
+            class="mt-2 w-full rounded-3xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-slate-100 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"></textarea>
+          <button type="submit"
+            class="mt-6 w-full rounded-[16px] bg-gradient-to-r from-primary to-accent px-5 py-3 text-sm font-semibold text-white shadow-[0_20px_40px_rgba(56,189,248,0.28)] transition-transform duration-200 hover:-translate-y-0.5">Send
+            Message</button>
+          <p id="formFeedback" class="mt-4 min-h-[1.25rem] text-sm text-accent"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <button id="scrollTopBtn"
+    class="fixed bottom-6 right-6 z-50 hidden h-14 w-14 items-center justify-center rounded-full bg-primary text-white shadow-xl shadow-primary/30 transition hover:-translate-y-1 hover:bg-accent focus:outline-none"
+    aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up text-lg"></i>
+  </button>
+
+  <footer class="mx-auto grid max-w-7xl gap-6 px-6 pb-12 text-sm text-slate-500 sm:px-6 lg:grid-cols-[1.2fr_0.8fr]">
+    <div class="space-y-4 rounded-[2rem] border border-slate-800/70 bg-slate-950/70 p-8 shadow-glow">
+      <p class="text-sm uppercase tracking-[0.28em] text-primary">Get in touch</p>
+      <p class="text-slate-300">Ready to build the next product or accelerate your engineering team? Let’s connect and
+        create thoughtful, performant solutions.</p>
+      <div class="flex flex-wrap gap-3 text-slate-400">
+        <a href="#contact"
+          class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/70 px-4 py-2 text-sm text-white transition hover:bg-slate-900">
+          <i class="fa-solid fa-envelope"></i>
+          Contact Me
+        </a>
+        <a href="Raviranjan kumar_resume.pdf" download
+          class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-transparent px-4 py-2 text-sm text-white transition hover:bg-slate-900">
+          <i class="fa-solid fa-file-arrow-down"></i>
+          Download Resume
+        </a>
+      </div>
+    </div>
+    <div class="rounded-[2rem] border border-slate-800/70 bg-slate-950/70 p-8 shadow-glow">
+      <p class="text-sm uppercase tracking-[0.28em] text-primary">Connect</p>
+      <div class="mt-5 grid gap-4 text-slate-300">
         <div class="flex items-center gap-3">
-          <button id="mobileMenuBtn" class="flex h-11 w-11 flex-col items-center justify-center gap-1 rounded-2xl border border-slate-700 bg-slate-900/80 text-slate-100 md:hidden" aria-label="Open mobile menu">
-            <span class="block h-0.5 w-5 rounded-full bg-current"></span>
-            <span class="block h-0.5 w-5 rounded-full bg-current"></span>
-            <span class="block h-0.5 w-5 rounded-full bg-current"></span>
-          </button>
+          <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-900 text-primary"><i
+              class="fa-solid fa-envelope"></i></span>
+          <span><a href="mailto:webwithshaurya@gmail.com"
+              class="text-slate-300 hover:text-white">webwithshaurya@gmail.com</a></span>
         </div>
-      </div>
-      <div id="mobileNav" class="mobile-nav hidden border-t border-slate-800/70 bg-slate-950/95 px-6 py-4 md:hidden">
-        <a href="#home" class="nav-link block py-2">Home</a>
-        <a href="#about" class="nav-link block py-2">About</a>
-        <a href="#skills" class="nav-link block py-2">Skills</a>
-        <a href="#projects" class="nav-link block py-2">Projects</a>
-        <a href="#experience" class="nav-link block py-2">Experience</a>
-        <a href="#certifications" class="nav-link block py-2">Certifications</a>
-        <a href="#contact" class="nav-link block py-2">Contact</a>
-      </div>
-    </header>
-
-    <main class="mx-auto max-w-7xl px-6 py-10 sm:py-14">
-      <section id="home" class="section relative overflow-hidden rounded-[2.25rem] bg-slate-950/70 px-6 pt-20 pb-14 sm:px-10 sm:pt-24 sm:pb-20 shadow-glow">
-        <div class="absolute -left-16 top-10 h-72 w-72 rounded-full bg-primary/20 blur-3xl"></div>
-        <div class="absolute -right-16 bottom-8 h-72 w-72 rounded-full bg-accent/20 blur-3xl"></div>
-        <div class="relative grid gap-12 lg:grid-cols-[1.3fr_0.9fr] lg:items-center">
-          <div class="space-y-6">
-            <p class="text-sm uppercase tracking-[0.28em] text-primary">Hello, I'm</p>
-            <h1 class="text-5xl font-semibold tracking-tight text-white sm:text-6xl">
-              <span id="typewriter"></span><span class="typewriter-cursor">|</span>
-            </h1>
-            <p class="max-w-2xl text-slate-300 sm:text-lg">Building secure, scalable digital products with clean architecture and modern frontend experiences.</p>
-            <div class="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
-              <a href="#projects" class="inline-flex items-center justify-center rounded-[16px] bg-gradient-to-r from-primary to-accent px-5 py-3 text-sm font-semibold text-white shadow-[0_20px_40px_rgba(56,189,248,0.28)] transition-transform duration-200 hover:-translate-y-0.5">
-                    <i class="fa-solid fa-arrow-right mr-2 text-base"></i>
-                View Projects
-              </a>
-              <a href="#contact" class="inline-flex items-center justify-center rounded-[16px] border border-slate-700 bg-slate-900/70 px-5 py-3 text-sm font-semibold text-slate-100 transition hover:bg-slate-900">
-                <i class="fa-solid fa-envelope mr-2 text-base"></i>
-                Contact Me
-              </a>
-              <a href="Raviranjan kumar_resume.pdf" download class="inline-flex items-center justify-center rounded-[16px] border border-slate-700 bg-transparent px-5 py-3 text-sm font-semibold text-slate-100 transition hover:bg-slate-900">
-                <i class="fa-solid fa-file-arrow-down mr-2 text-base"></i>
-                Download Resume
-              </a>
-            </div>
-            <div class="flex flex-wrap gap-4 text-sm text-slate-400 mt-6">
-              <a href="https://github.com/DeveloperShaurya7" class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/70 px-4 py-3 transition hover:bg-slate-800 hover:text-white"><i class="fa-brands fa-github"></i>GitHub</a>
-              <a href="https://www.linkedin.com/in/ravi-ranjan-kumar-375329334/" class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/70 px-4 py-3 transition hover:bg-slate-800 hover:text-white"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
-              <a href="https://x.com/developrshaurya" class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/70 px-4 py-3 transition hover:bg-slate-800 hover:text-white"><i class="fa-brands fa-twitter"></i>Twitter</a>
-              <a href="https://www.instagram.com/developershaurya/" class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/70 px-4 py-3 transition hover:bg-slate-800 hover:text-white"><i class="fa-brands fa-instagram"></i>Instagram</a>
-            </div>
-          </div>
-          <div class="flex items-center justify-center">
-            <div class="relative overflow-hidden rounded-[2.75rem] border border-slate-800/70 bg-slate-950/80 p-4 shadow-[0_40px_120px_rgba(8,16,31,0.35)]">
-              <div class="pointer-events-none absolute -left-12 top-12 h-40 w-40 rounded-full bg-primary/20 blur-3xl"></div>
-              <div class="pointer-events-none absolute -right-14 bottom-12 h-32 w-32 rounded-full bg-accent/25 blur-3xl"></div>
-              <img src="images/my profile.png" alt="Portrait of Raviranjan Kumar" class="h-[400px] w-[400px] rounded-[2.5rem] bg-slate-950 object-contain" />
-            </div>
-          </div>
+        <div class="flex items-center gap-3">
+          <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-900 text-primary"><i
+              class="fa-solid fa-location-dot"></i></span>
+          <span>Delhi, India</span>
         </div>
-      </section>
-
-      <section id="about" class="section mt-24">
-        <div class="mb-10 space-y-3">
-          <p class="text-sm uppercase tracking-[0.28em] text-primary">About Me</p>
-          <h2 class="text-3xl font-semibold text-white sm:text-4xl">Professional profile + achievements</h2>
-        </div>
-        <div class="grid gap-6 lg:grid-cols-[1.4fr_0.8fr]">
-          <div class="rounded-[2rem] border border-slate-800/70 bg-slate-950/70 backdrop-blur-xl shadow-glow p-8">
-            <p class="text-slate-300">I'm a full-stack software engineer with a passion for solving complex problems, building beautiful interfaces, and scaling products with modern architecture.</p>
-            <ul class="mt-8 grid gap-3 text-slate-200">
-              <li class="rounded-3xl border border-slate-800/80 bg-slate-950/80 px-5 py-4"> <strong class="text-white">5+ years</strong> building apps in startups and teams</li>
-              <li class="rounded-3xl border border-slate-800/80 bg-slate-950/80 px-5 py-4"> <strong class="text-white">30+</strong> shipped features and product launches</li>
-              <li class="rounded-3xl border border-slate-800/80 bg-slate-950/80 px-5 py-4"> <strong class="text-white">4.9/5</strong> client and peer satisfaction</li>
-            </ul>
-            <p class="mt-8 text-slate-300">Outside work, I experiment with generative design, hiking, and open-source contributions.</p>
-          </div>
-          <div class="grid gap-4">
-            <div class="rounded-[2rem] border border-slate-800/70 bg-slate-950/70 backdrop-blur-xl shadow-glow p-8">
-              <span data-target="12" class="text-4xl font-semibold text-white">0</span>
-              <p class="text-slate-400">Projects shipped</p>
-            </div>
-            <div class="rounded-[2rem] border border-slate-800/70 bg-slate-950/70 backdrop-blur-xl shadow-glow p-8">
-              <span data-target="5" class="text-4xl font-semibold text-white">0</span>
-              <p class="text-slate-400">Years experience</p>
-            </div>
-            <div class="rounded-[2rem] border border-slate-800/70 bg-slate-950/70 backdrop-blur-xl shadow-glow p-8">
-              <span data-target="95" class="text-4xl font-semibold text-white">0</span>
-              <p class="text-slate-400">Performance score</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="skills" class="section mt-24">
-        <div class="mb-10 space-y-3">
-          <p class="text-sm uppercase tracking-[0.28em] text-primary">Skills</p>
-          <h2 class="text-3xl font-semibold text-white sm:text-4xl">Tech stack and specialties</h2>
-        </div>
-        <div class="grid gap-6 lg:grid-cols-3">
-          <div class="rounded-[2rem] border border-slate-800/70 bg-slate-950/70 backdrop-blur-xl shadow-glow p-8">
-            <h3 class="text-xl font-semibold text-white">Frontend</h3>
-            <ul class="mt-6 space-y-3 text-slate-300">
-              <li class="flex items-center justify-between rounded-3xl bg-slate-950/80 px-4 py-3">React <span class="rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">Expert</span></li>
-              <li class="flex items-center justify-between rounded-3xl bg-slate-950/80 px-4 py-3">Next.js <span class="rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">Advanced</span></li>
-              <li class="flex items-center justify-between rounded-3xl bg-slate-950/80 px-4 py-3">TypeScript <span class="rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">Advanced</span></li>
-              <li class="flex items-center justify-between rounded-3xl bg-slate-950/80 px-4 py-3">Tailwind CSS <span class="rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">Advanced</span></li>
-            </ul>
-          </div>
-          <div class="rounded-[2rem] border border-slate-800/70 bg-slate-950/70 backdrop-blur-xl shadow-glow p-8">
-            <h3 class="text-xl font-semibold text-white">Backend</h3>
-            <ul class="mt-6 space-y-3 text-slate-300">
-              <li class="flex items-center justify-between rounded-3xl bg-slate-950/80 px-4 py-3">Node.js <span class="rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">Expert</span></li>
-              <li class="flex items-center justify-between rounded-3xl bg-slate-950/80 px-4 py-3">Express <span class="rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">Advanced</span></li>
-              <li class="flex items-center justify-between rounded-3xl bg-slate-950/80 px-4 py-3">Django <span class="rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">Intermediate</span></li>
-              <li class="flex items-center justify-between rounded-3xl bg-slate-950/80 px-4 py-3">REST APIs <span class="rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">Expert</span></li>
-            </ul>
-          </div>
-          <div class="rounded-[2rem] border border-slate-800/70 bg-slate-950/70 backdrop-blur-xl shadow-glow p-8">
-            <h3 class="text-xl font-semibold text-white">Tools</h3>
-            <ul class="mt-6 space-y-3 text-slate-300">
-              <li class="flex items-center justify-between rounded-3xl bg-slate-950/80 px-4 py-3">Git <span class="rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">Expert</span></li>
-              <li class="flex items-center justify-between rounded-3xl bg-slate-950/80 px-4 py-3">Docker <span class="rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">Advanced</span></li>
-              <li class="flex items-center justify-between rounded-3xl bg-slate-950/80 px-4 py-3">AWS <span class="rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">Intermediate</span></li>
-              <li class="flex items-center justify-between rounded-3xl bg-slate-950/80 px-4 py-3">CI/CD <span class="rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">Advanced</span></li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="projects" class="section mt-24">
-        <div class="mb-10 space-y-3">
-          <p class="text-sm uppercase tracking-[0.28em] text-primary">Featured Work</p>
-          <h2 class="text-3xl font-semibold text-white sm:text-4xl">Recent projects</h2>
-        </div>
-        <div class="rounded-[2rem] border border-slate-800/70 bg-slate-950/70 backdrop-blur-xl shadow-glow p-5 sm:p-6">
-          <div class="flex flex-wrap gap-3">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="web">Web</button>
-            <button class="filter-btn" data-filter="mobile">Mobile</button>
-            <button class="filter-btn" data-filter="api">API</button>
-          </div>
-        </div>
-        <div id="projectsGrid" class="mt-8 grid gap-6 lg:grid-cols-2"></div>
-      </section>
-
-      <section id="experience" class="section mt-24">
-        <div class="mb-10 space-y-3">
-          <p class="text-sm uppercase tracking-[0.28em] text-primary">Experience</p>
-          <h2 class="text-3xl font-semibold text-white sm:text-4xl">Career timeline</h2>
-        </div>
-        <div id="timeline" class="grid gap-5"></div>
-      </section>
-
-      <section id="certifications" class="section mt-24">
-        <div class="mb-10 space-y-3">
-          <p class="text-sm uppercase tracking-[0.28em] text-primary">Certifications</p>
-          <h2 class="text-3xl font-semibold text-white sm:text-4xl">Verified visual credentials</h2>
-        </div>
-        <div id="certificationsGrid" class="grid gap-6 lg:grid-cols-3"></div>
-      </section>
-
-      <section id="contact" class="section mt-24">
-        <div class="mb-10 space-y-3">
-          <p class="text-sm uppercase tracking-[0.28em] text-primary">Contact</p>
-          <h2 class="text-3xl font-semibold text-white sm:text-4xl">Let's build something together</h2>
-        </div>
-        <div class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-          <div class="rounded-[2rem] border border-slate-800/70 bg-slate-950/70 backdrop-blur-xl shadow-glow p-8">
-            <h3 class="text-2xl font-semibold text-white">Get in touch</h3>
-            <p class="mt-4 text-slate-300">I'm available for freelance work, full-time roles, and collaborative projects. Send a message and I�ll reply promptly.</p>
-            <ul class="mt-8 space-y-3 text-slate-300">
-              <li><span class="font-semibold text-white">Email:</span> hello@devcraft.com</li>
-              <li><span class="font-semibold text-white">Location:</span> Remote / Global</li>
-              <li><span class="font-semibold text-white">Availability:</span> Open for new opportunities</li>
-            </ul>
-            <div class="mt-8 flex flex-wrap gap-4 text-sm text-slate-400">
-              <a href="https://github.com/DeveloperShaurya7" class="inline-flex items-center gap-2 transition hover:text-white"><i class="fa-brands fa-github"></i>GitHub</a>
-              <a href="https://www.linkedin.com/in/ravi-ranjan-kumar-375329334/" class="inline-flex items-center gap-2 transition hover:text-white"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
-              <a href="https://x.com/developrshaurya" class="inline-flex items-center gap-2 transition hover:text-white"><i class="fa-brands fa-twitter"></i>Twitter</a>
-            </div>
-          </div>
-          <form id="contactForm" class="rounded-[2rem] border border-slate-800/70 bg-slate-950/70 backdrop-blur-xl shadow-glow p-8" novalidate>
-            <label for="name" class="text-sm font-medium text-slate-100">Name</label>
-            <input id="name" name="name" type="text" required placeholder="Your name" class="mt-2 w-full rounded-3xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-slate-100 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20" />
-            <label for="email" class="mt-5 block text-sm font-medium text-slate-100">Email</label>
-            <input id="email" name="email" type="email" required placeholder="you@example.com" class="mt-2 w-full rounded-3xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-slate-100 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20" />
-            <label for="message" class="mt-5 block text-sm font-medium text-slate-100">Message</label>
-            <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project" class="mt-2 w-full rounded-3xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-slate-100 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"></textarea>
-            <button type="submit" class="mt-6 w-full rounded-[16px] bg-gradient-to-r from-primary to-accent px-5 py-3 text-sm font-semibold text-white shadow-[0_20px_40px_rgba(56,189,248,0.28)] transition-transform duration-200 hover:-translate-y-0.5">Send Message</button>
-            <p id="formFeedback" class="mt-4 min-h-[1.25rem] text-sm text-accent"></p>
-          </form>
-        </div>
-      </section>
-    </main>
-
-    <button id="scrollTopBtn" class="fixed bottom-6 right-6 z-50 hidden h-14 w-14 items-center justify-center rounded-full bg-primary text-white shadow-xl shadow-primary/30 transition hover:-translate-y-1 hover:bg-accent focus:outline-none" aria-label="Scroll to top">
-      <i class="fa-solid fa-arrow-up text-lg"></i>
-    </button>
-
-    <footer class="mx-auto grid max-w-7xl gap-6 px-6 pb-12 text-sm text-slate-500 sm:px-6 lg:grid-cols-[1.2fr_0.8fr]">
-      <div class="space-y-4 rounded-[2rem] border border-slate-800/70 bg-slate-950/70 p-8 shadow-glow">
-        <p class="text-sm uppercase tracking-[0.28em] text-primary">Get in touch</p>
-        <p class="text-slate-300">Ready to build the next product or accelerate your engineering team? Let’s connect and create thoughtful, performant solutions.</p>
-        <div class="flex flex-wrap gap-3 text-slate-400">
-          <a href="#contact" class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/70 px-4 py-2 text-sm text-white transition hover:bg-slate-900">
-            <i class="fa-solid fa-envelope"></i>
-            Contact Me
-          </a>
-          <a href="Raviranjan kumar_resume.pdf" download class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-transparent px-4 py-2 text-sm text-white transition hover:bg-slate-900">
-            <i class="fa-solid fa-file-arrow-down"></i>
-            Download Resume
-          </a>
-        </div>
-      </div>
-      <div class="rounded-[2rem] border border-slate-800/70 bg-slate-950/70 p-8 shadow-glow">
-        <p class="text-sm uppercase tracking-[0.28em] text-primary">Connect</p>
-        <div class="mt-5 grid gap-4 text-slate-300">
-          <div class="flex items-center gap-3">
-            <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-900 text-primary"><i class="fa-solid fa-envelope"></i></span>
-            <span><a href="mailto:webwithshaurya@gmail.com" class="text-slate-300 hover:text-white">webwithshaurya@gmail.com</a></span>
-          </div>
-          <div class="flex items-center gap-3">
-            <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-900 text-primary"><i class="fa-solid fa-location-dot"></i></span>
-            <span>Delhi, India</span>
-          </div>
-          <div class="flex items-center gap-3">
-            <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-900 text-primary"><i class="fa-solid fa-award"></i></span>
-            <span>Certified across Python, JavaScript, and cloud workflows</span>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <div class="modal" id="projectModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <div class="relative rounded-[2rem] border border-slate-800/70 bg-slate-950/70 backdrop-blur-xl shadow-glow p-8 max-w-3xl w-full">
-        <button id="modalClose" class="absolute right-6 top-6 inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-700 bg-slate-900/70 text-slate-100 transition hover:bg-slate-900" aria-label="Close project details"><i class="fa-solid fa-xmark text-lg"></i></button>
-        <div class="space-y-4">
-          <span class="inline-flex rounded-full bg-primary/15 px-4 py-2 text-xs uppercase tracking-[0.28em] text-primary">Project details</span>
-          <h3 id="modalTitle" class="text-2xl font-semibold text-white">Project title</h3>
-          <p id="modalDescription" class="text-slate-300"></p>
-          <div id="modalTags" class="mt-4 flex flex-wrap gap-3"></div>
-          <div class="modal-actions mt-6 flex flex-wrap gap-3">
-            <a id="modalDemo" class="inline-flex items-center justify-center rounded-[16px] border border-slate-700 bg-slate-900/70 px-5 py-3 text-sm font-semibold text-slate-100 transition hover:bg-slate-900" href="#" target="_blank" rel="noreferrer"><i class="fa-solid fa-arrow-up-right-from-square mr-2 text-base"></i>Live Demo</a>
-            <a id="modalGitHub" class="inline-flex items-center justify-center rounded-[16px] border border-slate-700 bg-transparent px-5 py-3 text-sm font-semibold text-slate-100 transition hover:bg-slate-900" href="https://github.com/DeveloperShaurya7" target="_blank" rel="noreferrer"><i class="fa-brands fa-github mr-2 text-base"></i>GitHub</a>
-          </div>
+        <div class="flex items-center gap-3">
+          <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-900 text-primary"><i
+              class="fa-solid fa-award"></i></span>
+          <span>Certified across Python, JavaScript, and cloud workflows</span>
         </div>
       </div>
     </div>
+  </footer>
 
-    <div class="modal" id="certificateModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="certificateModalTitle">
-      <div class="relative rounded-[2rem] border border-slate-800/70 bg-slate-950/70 backdrop-blur-xl shadow-glow p-8 max-w-3xl w-full">
-        <button id="certificateModalClose" class="absolute right-6 top-6 inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-700 bg-slate-900/70 text-slate-100 transition hover:bg-slate-900" aria-label="Close certificate preview"><i class="fa-solid fa-xmark text-lg"></i></button>
-        <div class="space-y-6">
-          <span class="inline-flex rounded-full bg-primary/15 px-4 py-2 text-xs uppercase tracking-[0.28em] text-primary">Certificate preview</span>
-          <h3 id="certificateModalTitle" class="text-2xl font-semibold text-white">Certificate title</h3>
-          <p id="certificateModalIssuer" class="text-sm text-primary"></p>
-          <div class="rounded-[24px] overflow-hidden border border-slate-800 bg-slate-900">
-            <img id="certificateModalImage" src="" alt="Certificate preview" class="h-[420px] w-full object-cover sm:h-[520px]" />
-          </div>
-          <p id="certificateModalFocus" class="text-slate-300 leading-7"></p>
-          <a id="certificateModalLink" class="inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-white" href="#" target="_blank" rel="noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> View full credential</a>
+  <div class="modal" id="projectModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div
+      class="relative mx-4 rounded-[2rem] border border-slate-800/70 bg-slate-950/70 backdrop-blur-xl shadow-glow p-6 sm:p-8 max-w-3xl w-full">
+      <button id="modalClose"
+        class="absolute right-6 top-6 inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-700 bg-slate-900/70 text-slate-100 transition hover:bg-slate-900"
+        aria-label="Close project details"><i class="fa-solid fa-xmark text-lg"></i></button>
+      <div class="space-y-4">
+        <span
+          class="inline-flex rounded-full bg-primary/15 px-4 py-2 text-xs uppercase tracking-[0.28em] text-primary">Project
+          details</span>
+        <h3 id="modalTitle" class="text-2xl font-semibold text-white">Project title</h3>
+        <p id="modalDescription" class="text-slate-300"></p>
+        <div id="modalTags" class="mt-4 flex flex-wrap gap-3"></div>
+        <div class="modal-actions mt-6 flex flex-wrap gap-3">
+          <a id="modalDemo"
+            class="inline-flex items-center justify-center rounded-[16px] border border-slate-700 bg-slate-900/70 px-5 py-3 text-sm font-semibold text-slate-100 transition hover:bg-slate-900"
+            href="#" target="_blank" rel="noreferrer"><i
+              class="fa-solid fa-arrow-up-right-from-square mr-2 text-base"></i>Live Demo</a>
+          <a id="modalGitHub"
+            class="inline-flex items-center justify-center rounded-[16px] border border-slate-700 bg-transparent px-5 py-3 text-sm font-semibold text-slate-100 transition hover:bg-slate-900"
+            href="https://github.com/DeveloperShaurya7" target="_blank" rel="noreferrer"><i
+              class="fa-brands fa-github mr-2 text-base"></i>GitHub</a>
         </div>
       </div>
     </div>
+  </div>
 
-    <script src="script.js"></script>
-  </body>
+  <div class="modal" id="certificateModal" aria-hidden="true" role="dialog" aria-modal="true"
+    aria-labelledby="certificateModalTitle">
+    <div
+      class="relative mx-4 rounded-[2rem] border border-slate-800/70 bg-slate-950/70 backdrop-blur-xl shadow-glow p-6 sm:p-8 max-w-3xl w-full">
+      <button id="certificateModalClose"
+        class="absolute right-6 top-6 inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-700 bg-slate-900/70 text-slate-100 transition hover:bg-slate-900"
+        aria-label="Close certificate preview"><i class="fa-solid fa-xmark text-lg"></i></button>
+      <div class="space-y-6">
+        <span
+          class="inline-flex rounded-full bg-primary/15 px-4 py-2 text-xs uppercase tracking-[0.28em] text-primary">Certificate
+          preview</span>
+        <h3 id="certificateModalTitle" class="text-2xl font-semibold text-white">Certificate title</h3>
+        <p id="certificateModalIssuer" class="text-sm text-primary"></p>
+        <div class="rounded-[24px] overflow-hidden border border-slate-800 bg-slate-900">
+          <img id="certificateModalImage" src="" alt="Certificate preview"
+            class="h-[250px] sm:h-[420px] md:h-[520px] w-full object-cover" />
+        </div>
+        <p id="certificateModalFocus" class="text-slate-300 leading-7"></p>
+        <a id="certificateModalLink"
+          class="inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-white" href="#"
+          target="_blank" rel="noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> View full
+          credential</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
 </html>

@@ -154,7 +154,7 @@ const renderProjects = (filter = 'all') => {
   const filtered = PROJECTS.filter((project) => filter === 'all' || project.category === filter);
   filtered.forEach((project) => {
     const card = createElement('article', { class: 'reveal-item rounded-[28px] border border-slate-800/70 bg-slate-950/80 p-6 shadow-glow transition-transform duration-300 hover:-translate-y-1 hover:border-primary/30' });
-    const imageWrapper = createElement('div', { class: 'relative h-52 w-full overflow-hidden rounded-[24px] bg-slate-900' });
+    const imageWrapper = createElement('div', { class: 'relative aspect-video w-full overflow-hidden rounded-[24px] bg-slate-900' });
     const imageEl = createElement('img', { src: project.image, alt: `${project.title} preview` });
     imageEl.className = 'h-full w-full object-cover';
     imageWrapper.append(imageEl);
@@ -180,18 +180,36 @@ const renderProjects = (filter = 'all') => {
 };
 
 const renderTimeline = () => {
-  TIMELINE.forEach((item) => {
-    const entry = createElement('article', { class: 'reveal-item relative rounded-[28px] border border-slate-800/70 bg-slate-950/80 p-6 shadow-glow' });
-    const marker = createElement('span', { class: 'absolute left-0 top-5 inline-flex h-3 w-3 rounded-full bg-gradient-to-br from-primary to-accent' });
-    entry.append(marker);
+  timelineContainer.innerHTML = '';
+  TIMELINE.forEach((item, index) => {
+    const isLast = index === TIMELINE.length - 1;
+    
+    // Main wrapper holding track and content side-by-side
+    const row = createElement('div', { class: 'reveal-item relative flex gap-5 sm:gap-6' });
+    
+    // Left visual track
+    const track = createElement('div', { class: 'relative flex flex-col items-center' });
+    const dot = createElement('span', { class: 'relative z-10 mt-8 h-4 w-4 shrink-0 rounded-full bg-gradient-to-br from-primary to-accent border-4 border-slate-950' });
+    track.append(dot);
+    
+    // Connector line stretching down to next item
+    if (!isLast) {
+      const line = createElement('div', { class: 'absolute top-11 bottom-[-2rem] w-px bg-slate-800' });
+      track.append(line);
+    }
+    
+    // Content box
+    const content = createElement('article', { class: 'flex-1 mb-8 rounded-[28px] border border-slate-800/70 bg-slate-950/80 p-6 shadow-glow' });
     const title = createElement('h3', { text: item.title });
     title.className = 'text-xl font-semibold text-white';
     const meta = createElement('span', { text: `${item.company} · ${item.duration}` });
     meta.className = 'block mt-2 text-sm text-primary';
     const paragraph = createElement('p', { text: item.description });
     paragraph.className = 'mt-4 text-slate-400 leading-7';
-    entry.append(title, meta, paragraph);
-    timelineContainer.append(entry);
+    content.append(title, meta, paragraph);
+    
+    row.append(track, content);
+    timelineContainer.append(row);
   });
 };
 
@@ -200,7 +218,7 @@ const renderCertifications = () => {
     const card = createElement('article', { class: 'reveal-item rounded-[28px] border border-slate-800/70 bg-slate-950/80 p-6 shadow-glow transition-transform duration-300 hover:-translate-y-1 hover:border-primary/30' });
     const imageWrapper = createElement('div', { class: 'overflow-hidden rounded-[24px] bg-slate-900' });
     const certImage = createElement('img', { src: cert.image, alt: `${cert.title} certificate preview` });
-    certImage.className = 'h-44 w-full object-cover transition duration-200 hover:scale-105';
+    certImage.className = 'aspect-[4/3] w-full object-cover transition duration-200 hover:scale-105';
     imageWrapper.append(certImage);
     const logo = createElement('div', { class: 'flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-900 text-primary text-sm font-semibold uppercase tracking-[0.22em]' });
     logo.textContent = cert.issuer
@@ -249,6 +267,7 @@ const openCertificateModal = (cert) => {
   certificateModalIssuer.textContent = `${cert.issuer} · ${cert.date}`;
   certificateModalFocus.textContent = cert.focus;
   certificateModalImage.src = cert.image;
+  certificateModalImage.className = 'max-h-[60vh] w-full object-contain';
   certificateModalImage.alt = `${cert.title} certificate preview`;
   certificateModalLink.href = cert.link;
   certificateModal.classList.add('open');
@@ -379,12 +398,19 @@ const initButtons = () => {
   mobileMenuBtn.addEventListener('click', () => {
     const expanded = mobileNav.getAttribute('aria-hidden') === 'false';
     mobileNav.setAttribute('aria-hidden', expanded ? 'true' : 'false');
-    mobileNav.style.display = expanded ? 'none' : 'flex';
+    if (expanded) {
+      mobileNav.classList.add('hidden');
+      mobileNav.classList.remove('flex');
+    } else {
+      mobileNav.classList.remove('hidden');
+      mobileNav.classList.add('flex');
+    }
   });
   document.querySelectorAll('.mobile-nav .nav-link').forEach((link) => {
     link.addEventListener('click', () => {
       mobileNav.setAttribute('aria-hidden', 'true');
-      mobileNav.style.display = 'none';
+      mobileNav.classList.add('hidden');
+      mobileNav.classList.remove('flex');
     });
   });
   modalClose.addEventListener('click', closeProjectModal);
